@@ -24,13 +24,11 @@ class ViewController3: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let vistaAnterior = self.navigationController?.viewControllers[ (self.navigationController?.viewControllers.count)!-2] as? ViewController2
         
-      //  guard let vistaAnterior = presentingViewController as? ViewController2 else
-       // {return}
         miEtiquetaNombre.text = "Nombre: " + vistaAnterior!.miInputNombre.text!
         miEtiquetaApellido.text = "Apellidos: " + vistaAnterior!.miInputApellido.text!
         miEtiquetaCorreo.text = "Correo: " + vistaAnterior!.miInputCorreo.text!
         
-        diccionarioUsuarios[vistaAnterior!.miInputNombre.text!] = [vistaAnterior!.miInputApellido.text!, vistaAnterior!.miInputCorreo.text!]
+        arrayDeDiccionarios.append(["nombre": vistaAnterior!.miInputNombre.text!, "apellido": vistaAnterior!.miInputApellido.text!, "correo": vistaAnterior!.miInputCorreo.text!])
     }
     
 

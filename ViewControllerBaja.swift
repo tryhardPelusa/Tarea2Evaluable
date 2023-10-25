@@ -7,23 +7,29 @@
 
 import UIKit
 
-var diccionarioUsuarios: [String: [String]] = [:]
-var keys: [String] {
-    return Array(diccionarioUsuarios.keys)
-}
+var arrayDeDiccionarios: [[String: String]] = []
 
 class ViewControllerBaja: UIViewController {
     @IBOutlet weak var miPickerView: UIPickerView!
     
-    var seleccionada: String = ""
+    var seleccionada: Int = 0
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var diccionario1: [String: String] = ["nombre": "Juan", "apellido": "Pérez", "correo": "juan@example.com"]
+        arrayDeDiccionarios.append(diccionario1)
 
+        var diccionario2: [String: String] = ["nombre": "María", "apellido": "González", "correo": "maria@example.com"]
+        arrayDeDiccionarios.append(diccionario2)
         
         miPickerView.reloadAllComponents()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        miPickerView.reloadAllComponents()
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -31,15 +37,21 @@ class ViewControllerBaja: UIViewController {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return diccionarioUsuarios.count
+        return arrayDeDiccionarios.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return keys[row]
+        if row < arrayDeDiccionarios.count {
+            let diccionario = arrayDeDiccionarios[row]
+            return diccionario["nombre"]
+        }
+        return nil
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        seleccionada = keys[row]
+        if row < arrayDeDiccionarios.count {
+            seleccionada = row
+        }
     }
     
 
@@ -54,6 +66,6 @@ class ViewControllerBaja: UIViewController {
     */
 
     @IBAction func borrarUsuario(_ sender: Any) {
-        diccionarioUsuarios.removeValue(forKey: seleccionada)
+        arrayDeDiccionarios.remove(at: seleccionada)
     }
 }
