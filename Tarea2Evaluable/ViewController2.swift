@@ -9,6 +9,15 @@ import UIKit
 
 class ViewController2: UIViewController {
 
+    @IBOutlet weak var miInputNombre: UITextField!
+    
+    
+    @IBOutlet weak var miInputApellido: UITextField!
+    
+    
+    @IBOutlet weak var miInputCorreo: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +35,15 @@ class ViewController2: UIViewController {
     }
     */
 
+    @IBAction func onClickbuscar(_ sender: Any) {
+     /*   let miStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let miVista3 = miStoryboard.instantiateViewController(identifier: "vistaTres") as! ViewController3
+        
+        miVista3.modalTransitionStyle = .flipHorizontal
+        
+        miVista3.modalPresentationStyle = .
+        
+        
+        present(miVista3, animated: true)*/
+    }
 }
