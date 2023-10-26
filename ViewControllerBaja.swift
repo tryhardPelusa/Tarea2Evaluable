@@ -9,7 +9,7 @@ import UIKit
 
 var arrayDeDiccionarios: [[String: String]] = []
 
-class ViewControllerBaja: UIViewController {
+class ViewControllerBaja: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     @IBOutlet weak var miPickerView: UIPickerView!
     
     var seleccionada: Int = 0
@@ -18,10 +18,10 @@ class ViewControllerBaja: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var diccionario1: [String: String] = ["nombre": "Juan", "apellido": "Pérez", "correo": "juan@example.com"]
+        let diccionario1: [String: String] = ["nombre": "Juan", "apellido": "Pérez", "correo": "juan@example.com"]
         arrayDeDiccionarios.append(diccionario1)
 
-        var diccionario2: [String: String] = ["nombre": "María", "apellido": "González", "correo": "maria@example.com"]
+        let diccionario2: [String: String] = ["nombre": "María", "apellido": "González", "correo": "maria@example.com"]
         arrayDeDiccionarios.append(diccionario2)
         
         miPickerView.reloadAllComponents()
@@ -67,5 +67,6 @@ class ViewControllerBaja: UIViewController {
 
     @IBAction func borrarUsuario(_ sender: Any) {
         arrayDeDiccionarios.remove(at: seleccionada)
+        miPickerView.reloadAllComponents()
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D2E240D2AE9212900FB86DF /* ViewControllerBaja.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E240C2AE9212900FB86DF /* ViewControllerBaja.swift */; };
+		1D7721582AEA7442008FA4E7 /* ViewControllerCalculadora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7721572AEA7442008FA4E7 /* ViewControllerCalculadora.swift */; };
 		1DD3F1392AE132C200E0ACDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3F1382AE132C200E0ACDF /* AppDelegate.swift */; };
 		1DD3F13B2AE132C200E0ACDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3F13A2AE132C200E0ACDF /* SceneDelegate.swift */; };
 		1DD3F13D2AE132C200E0ACDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3F13C2AE132C200E0ACDF /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1D2E240C2AE9212900FB86DF /* ViewControllerBaja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBaja.swift; sourceTree = "<group>"; };
+		1D7721572AEA7442008FA4E7 /* ViewControllerCalculadora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCalculadora.swift; sourceTree = "<group>"; };
 		1DD3F1352AE132C200E0ACDF /* Tarea2Evaluable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tarea2Evaluable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD3F1382AE132C200E0ACDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DD3F13A2AE132C200E0ACDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		1DD3F12C2AE132C200E0ACDF = {
 			isa = PBXGroup;
 			children = (
+				1D7721572AEA7442008FA4E7 /* ViewControllerCalculadora.swift */,
 				1D2E240C2AE9212900FB86DF /* ViewControllerBaja.swift */,
 				1DD3F1372AE132C200E0ACDF /* Tarea2Evaluable */,
 				1DD3F1362AE132C200E0ACDF /* Products */,
@@ -153,6 +156,7 @@
 				1DD8A23C2AE7D27700FDB638 /* ViewController2.swift in Sources */,
 				1DD3F1392AE132C200E0ACDF /* AppDelegate.swift in Sources */,
 				1DD3F13B2AE132C200E0ACDF /* SceneDelegate.swift in Sources */,
+				1D7721582AEA7442008FA4E7 /* ViewControllerCalculadora.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

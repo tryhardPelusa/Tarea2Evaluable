@@ -176,6 +176,10 @@ QXBlbGxpZG9zOhA
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gUo-V0-2Et">
                                 <rect key="frame" x="0.0" y="312" width="393" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BgN-mA-Ntd" id="B5X-nW-ENE"/>
+                                    <outlet property="delegate" destination="BgN-mA-Ntd" id="NNO-1v-EJD"/>
+                                </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3e-bF-gKT">
                                 <rect key="frame" x="160" y="674" width="72" height="35"/>
@@ -199,21 +203,29 @@ QXBlbGxpZG9zOhA
             </objects>
             <point key="canvasLocation" x="1804" y="-30"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Calculadora-->
         <scene sceneID="iMt-Ad-Rtv">
             <objects>
-                <viewController id="SDu-el-IJw" sceneMemberID="viewController">
+                <viewController id="SDu-el-IJw" customClass="ViewControllerCalculadora" customModule="Tarea2Evaluable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rQ0-YS-c08">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculadora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmO-rj-WBt">
-                                <rect key="frame" x="151" y="416" width="91" height="21"/>
+                                <rect key="frame" x="151" y="124" width="91" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCM-t4-8Xb">
+                                <rect key="frame" x="0.0" y="345" width="393" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SDu-el-IJw" id="GfT-iW-9Ha"/>
+                                    <outlet property="delegate" destination="SDu-el-IJw" id="W3j-tH-iwZ"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kFc-rX-8gm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
