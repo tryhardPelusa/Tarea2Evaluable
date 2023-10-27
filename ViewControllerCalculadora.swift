@@ -9,13 +9,25 @@ import UIKit
 
 class ViewControllerCalculadora: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    let operadores = ["+", "-", "*", "/"]
+    var seleccionada = ""
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        operadores.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        operadores[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            seleccionada = operadores[row]
+        
     }
     
 
@@ -26,14 +38,5 @@ class ViewControllerCalculadora: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
