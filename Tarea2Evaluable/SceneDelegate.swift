@@ -30,11 +30,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let miImagen1 = UIImage(systemName: "person.fill.badge.plus")
         let miImagen2 = UIImage(systemName: "person.fill.badge.minus")
-        let miImagen3 = UIImage(systemName: "calculator")
+        let miImagen3 = UIImage(systemName: "ruler")
         
         vista1.tabBarItem = UITabBarItem(title: "Alta", image: miImagen1, selectedImage: nil)
         vista2.tabBarItem = UITabBarItem(title: "Baja", image: miImagen2, selectedImage: nil)
-        vista3.tabBarItem = UITabBarItem(title: "ruler", image: miImagen3, selectedImage: nil)
+        vista3.tabBarItem = UITabBarItem(title: "Calculadora", image: miImagen3, selectedImage: nil)
         
         miTabbar.viewControllers = [vista1, vista2, vista3]
         

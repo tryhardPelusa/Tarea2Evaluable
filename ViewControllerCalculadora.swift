@@ -10,7 +10,7 @@ import UIKit
 class ViewControllerCalculadora: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let operadores = ["+", "-", "*", "/"]
-    var seleccionada = ""
+    var seleccionada = "+"
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

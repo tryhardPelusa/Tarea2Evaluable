@@ -33,21 +33,53 @@ class TableViewControllerHistorial: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 80
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "miCelda", for: indexPath) as! miCeldaPersonalizada
 
         // Configure the cell...
-        cell.operacion.text = historialOperaciones[indexPath.row]
-
+        let diccionario = historialOperaciones[indexPath.row]
+        
+        cell.valor1.text = diccionario["valor1"]
+        cell.operacion.text = diccionario["operador"]
+        cell.valor2.text = diccionario["valor2"]
+        cell.resultado.text = diccionario["resultado"]
         return cell
     }
     
-    class miCeldaPersonalizada: UITableViewCell {
-        @IBOutlet weak var operacion: UILabel!
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        
+        
+        let opcionBorrar = UIContextualAction(style: .destructive, title: "Borrar") { (accion, view, completion)in
+            
+            print("Hemos pulsado borrar")
+            completion(true)
+            historialOperaciones.remove(at: indexPath.row)
+            
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        let config = UISwipeActionsConfiguration(actions: [opcionBorrar])
+        return config
     }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let opcionInvertir = UIContextualAction(style: .destructive, title: "Borrar") { (accion, view, completion)in
+            
+            print("Hemos pulsado borrar")
+            completion(true)
+            historialOperaciones.remove(at: indexPath.row)
+            
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        let config = UISwipeActionsConfiguration(actions: [opcionInvertir])
+        return config
+    }
+
     
 
     /*
@@ -95,4 +127,11 @@ class TableViewControllerHistorial: UITableViewController {
     }
     */
 
+}
+
+class miCeldaPersonalizada: UITableViewCell {
+    @IBOutlet weak var operacion: UILabel!
+    @IBOutlet weak var valor1: UILabel!
+    @IBOutlet weak var valor2: UILabel!
+    @IBOutlet weak var resultado: UILabel!
 }

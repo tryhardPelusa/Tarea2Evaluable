@@ -7,7 +7,7 @@
 
 import UIKit
 
-var historialOperaciones: [String] = []
+var historialOperaciones: [[String: String]] = []
 
 class ViewControllerCalculadoraNumeros: UIViewController {
 
@@ -29,7 +29,8 @@ class ViewControllerCalculadoraNumeros: UIViewController {
             let expresion = inputNum1.text! + operador! + inputNum2.text!
             if let resultado = NSExpression(format: expresion).expressionValue(with: nil, context: nil) as? NSNumber {
                 labelResultado.text = "Resultado: \(resultado.doubleValue)"
-                historialAplicaciones.append(expresion + "\(resultado.doubleValue)")
+                let diccionario: [String:String] = ["valor1":inputNum1.text!, "operador":operador!, "valor2":inputNum2.text!, "resultado":String(resultado.doubleValue)]
+                historialOperaciones.append(diccionario)
             }
         } else {
             labelResultado.text = "Introduce solo valores numéricos."
