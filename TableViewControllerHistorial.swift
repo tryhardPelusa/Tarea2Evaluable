@@ -67,14 +67,37 @@ class TableViewControllerHistorial: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let opcionInvertir = UIContextualAction(style: .destructive, title: "Borrar") { (accion, view, completion)in
+        let opcionInvertir = UIContextualAction(style: .normal, title: "Invertir") { (accion, view, completion)in
             
-            print("Hemos pulsado borrar")
+            print("Hemos pulsado invertir")
             completion(true)
-            historialOperaciones.remove(at: indexPath.row)
             
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            var diccionario = historialOperaciones[indexPath.row]
+
+            if let valor1 = diccionario["valor1"], let valor2 = diccionario["valor2"] {
+                if var operador = diccionario["operador"]{
+                    var resultado: Double = 0.0
+
+                    if operador == "+" {
+                        resultado = Double(valor1)! - Double(valor2)!
+                        operador = "-"
+                    } else if operador == "-" {
+                        resultado = Double(valor1)! + Double(valor2)!
+                        operador = "+"
+                    } else if operador == "*" {
+                        resultado = Double(valor1)! / Double(valor2)!
+                        operador = "/"
+                    } else if operador == "/" {
+                        resultado = Double(valor1)! * Double(valor2)!
+                        operador = "*"
+                    }
+
+                    diccionario["resultado"] = String(resultado)
+                    diccionario["operador"] = operador
+                }
+            }
+            historialOperaciones[indexPath.row] = diccionario
+            tableView.reloadRows(at: [indexPath], with: .left)
         }
         let config = UISwipeActionsConfiguration(actions: [opcionInvertir])
         return config

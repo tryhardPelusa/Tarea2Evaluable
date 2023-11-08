@@ -33,7 +33,8 @@ class ViewControllerCalculadoraNumeros: UIViewController {
                 historialOperaciones.append(diccionario)
             }
         } else {
-            labelResultado.text = "Introduce solo valores numéricos."
+            labelResultado.numberOfLines = 0
+            labelResultado.text = "Has dejado un campo vacio o \nhas introducio valores no numéricos"
         }
 
         
@@ -41,9 +42,8 @@ class ViewControllerCalculadoraNumeros: UIViewController {
     
     func contieneSoloNumeros(_ cadena: String) -> Bool {
         let conjuntoNumerico = CharacterSet.decimalDigits
-        return cadena.rangeOfCharacter(from: conjuntoNumerico.inverted) == nil
+        return !cadena.isEmpty && cadena.rangeOfCharacter(from: conjuntoNumerico.inverted) == nil
     }
-
     
     /*
     // MARK: - Navigation
